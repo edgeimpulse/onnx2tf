@@ -532,6 +532,7 @@ def convert(
                     if overwrite_input_shape is not None else []
                 append_param = append_param + ['--no-large-tensor'] \
                     if no_large_tensor else append_param
+                append_param = append_param + ['--skip-constant-folding']
                 result = subprocess.check_output(
                     [
                         'onnxsim',
